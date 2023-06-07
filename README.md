@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# NTT DATA Business Solutions Turkey - Frontend Challenge'23
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains my solution to the NTT DATA Business Solutions Turkey Frontend Challenge. It showcases my implementation of the given case requirements and design.
 
-## Available Scripts
+### Live Demo
+You can access the live demo of the project by clicking on the following link: [Vercel](https://your-vercel-link)
 
-In the project directory, you can run:
+## Project Details
 
-### `npm start`
+- The design for this project can be found on Figma. Please refer to the following URL for the design specifications and visual assets: [FIGMA](https://www.figma.com/file/STzY429FfaHd51OsBVn0iE/NTT-FE?node-id=0%3A1&t=L1x8LAj5cSHgY2gs-0)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- To fetch the product data, please use the following [JSON API URL](https://honey-badgers-ecommerce.glitch.me/products)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Case Requirements
 
-### `npm test`
+- **CSS and SASS:** Utilize CSS and SASS for styling the application.
+- **Framework/Library:** You can choose from frameworks/libraries such as MUI, Styled Emotion, React Styled, Bootstrap, or Tailwind.
+- **Responsiveness:** Ensure that the design is responsive and adapts well to desktop, tablet, and mobile devices.
+- **Like/Unlike Functionality:** When the heart icon is clicked, the corresponding product should transition to the "liked" state, and the heart icon should turn red. If clicked again, it should transition to the "unliked" state, and the heart icon should appear gray.
+- **Display Like Count:** Display the total number of likes for each product, and ensure that this count updates when the "unlike" action is performed.
+- **Filter by Liked Products:** Clicking on the "My Likes" section should filter and display only the products in the "liked" state. Clicking it again should remove the filter.
+- **Product Box Click Redirect:** When a product box is clicked, it should redirect the user to a specified address (e.g., google.com).
+- **Product Title Display:** The product title should be displayed within a maximum of two lines. If it exceeds two lines, it should be truncated with ellipsis (...).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Technologies to be used
+- 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Install dependencies
+- 
