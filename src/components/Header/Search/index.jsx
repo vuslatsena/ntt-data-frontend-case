@@ -2,6 +2,19 @@ import React from "react";
 import Category from "./Category";
 import TemporaryDrawer from "./Drawer";
 import searchIcon from "../../../assets/search.svg";
+import { styled } from "@mui/system";
+import Button from "@mui/material/Button";
+
+const CustomButton = styled(Button)`
+  background-color: #0059BC;
+  width: 110px;
+  height: 40px;
+  margin-left: 10px;
+
+  &:hover {
+    background-color: #004899; // Change the background color on hover if desired
+  }
+`;
 
 export default function Search() {
   return (
@@ -15,19 +28,22 @@ export default function Search() {
           <TemporaryDrawer />
         </div>
       </div>
-
       <div className="w-full sm:w-5/6 flex justify-between mt-3 sm:mt-0">
         <div className="sm:w-3/4 flex justify-between grow sm:grow-0 border-[1px] border-solid border-neutral-300 rounded">
           <input
             type="search"
-            className="bg-transparent px-3 py-[0.25rem] text-base font-normal  text-neutral-700 outline-offset-0 w-full"
+            className="bg-transparent px-3 py-[0.25rem] text-base font-normal text-neutral-700 outline-offset-0 w-full"
             placeholder="Search"
           />
           <Category />
         </div>
-        <button className="bg-blue-800 rounded border-[1px] border-blue-800 px-6 py-2 text-xs">
-          <img src={searchIcon} alt="Search" />
-        </button>
+        <div className="flex items-center">
+          <div>
+            <CustomButton>
+              <img src={searchIcon} alt="Search" />
+            </CustomButton>
+          </div>
+        </div>
       </div>
     </div>
   );
