@@ -22,7 +22,16 @@ You can access the live demo of the project by clicking on the following link: [
 - **Product Box Click Redirect:** When a product box is clicked, it should redirect the user to a specified address (e.g., google.com).
 - **Product Title Display:** The product title should be displayed within a maximum of two lines. If it exceeds two lines, it should be truncated with ellipsis (...).
 
+## Features
 
+in the footer
+- contact mail
+- phone number
+- logos depicting social media accounts
+- email signup structure
+- the details given about the company 
+
+have a functional.
 ## Technologies to be used
 - 
 
