@@ -81,9 +81,6 @@ export default function More(props) {
           Security
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          Status
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
           Docs
         </MenuItem>
       </StyledMenu>

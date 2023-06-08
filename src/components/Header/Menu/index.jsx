@@ -37,14 +37,15 @@ export default function Menu() {
   const idProducts = openProducts ? "products-popover" : undefined;
 
   return (
-    <div className="container w-8/11 sm:w-full mx-auto">
+    <div className="container w-5/6 sm:w-full mx-auto">
       <div className="hidden sm:flex justify-between items-center py-3 text-sm">
-        <Stack direction="row" spacing={2} justifyContent="center">
+        <div>
           <Button
             aria-describedby={idAbout}
             variant="text"
             size="small"
             onClick={handleClickAbout}
+            className="hidden lg:flex"
           >
             About Us
           </Button>
@@ -90,13 +91,14 @@ export default function Menu() {
               />
             </Box>
           </Popover>
-        </Stack>
-        <Stack direction="row" spacing={2} justifyContent="center">
+        </div>
+        <div direction="row" spacing={2} justifyContent="center">
           <Button
             aria-describedby={idServices}
             variant="text"
             size="small"
             onClick={handleClickServices}
+            className="hidden lg:flex"
           >
             Services
           </Button>
@@ -142,13 +144,14 @@ export default function Menu() {
               />
             </Box>
           </Popover>
-        </Stack>
-        <Stack direction="row" spacing={2} justifyContent="center">
+        </div>
+        <div direction="row" spacing={2} justifyContent="center">
           <Button
             aria-describedby={idProducts}
             variant="text"
             size="small"
             onClick={handleClickProducts}
+            className="hidden sm:flex"
           >
             Products
           </Button>
@@ -188,30 +191,11 @@ export default function Menu() {
               />
             </Box>
           </Popover>
-        </Stack>
-        <Stack
-          direction="row"
-          spacing={2}
-          alignItems="center"
-          justifyContent="center"
-          sx={{
-            display: { xs: "none", lg: "flex" },
-          }}
-        >
-          <Button variant="text" size="small">
-            Privacy
-          </Button>
-          <Button variant="text" size="small">
-            Security
-          </Button>
-          <Button variant="text" size="small">
-            Status
-          </Button>
-          <Button variant="text" size="small">
-            Docs
-          </Button>
-        </Stack>
-        <More className="hidden sm:flex lg:hidden" />
+        </div>
+        <More className="sm:flex hidden lg:hidden" />
+        <p className="hidden sm:hidden lg:flex">Privacy</p>
+        <p className="hidden sm:hidden lg:flex">Security</p>
+        <p className="hidden sm:hidden lg:flex">Docs</p>
       </div>
     </div>
   );

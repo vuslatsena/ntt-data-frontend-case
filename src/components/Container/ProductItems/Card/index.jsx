@@ -55,7 +55,7 @@ export default function Card({
             {name}
           </h5>
           <p className="bg-blue-200" style={{ backgroundColor: "#E6EEF8" }}>
-            {priceWithoutCurrency}
+            {priceWithoutCurrency} ₺
           </p>
           <p className="mb-4 text-sm leading-tight line-clamp-2">
             {description}
