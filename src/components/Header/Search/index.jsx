@@ -8,7 +8,7 @@ export default function Search() {
     <div className="container mx-auto w-5/6 sm:w-full flex flex-col sm:flex-row justify-between py-5">
       <div className="flex sm:mr-10 justify-between items-center">
         <a href="https://www.nttdata.com/global/en/">
-          <img className="h-6 sm:h-8" src="/logo.svg" alt="" />
+          <img className="h-6 sm:h-8" src="./logoImg/ntt-data-blue-logo.svg" alt="" />
         </a>
 
         <div className="flex justify-center items-center sm:hidden w-6 h-6 ">

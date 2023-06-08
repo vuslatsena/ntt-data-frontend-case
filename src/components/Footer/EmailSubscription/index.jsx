@@ -50,7 +50,7 @@ export default function EmailSubscription() {
   return (
     <div className="w-full sm:w-1/2 flex flex-col gap-y-5 text-white py-10">
       <div>
-        <img className="h-10" src="/white-logo.svg" alt="" />
+        <img className="h-10" src="./logoImg/ntt-data-white-logo.svg" alt="" />
       </div>
 
       <p className="hidden sm:flex">
