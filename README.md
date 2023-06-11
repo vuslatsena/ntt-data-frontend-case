@@ -3,7 +3,7 @@
 This repository contains my solution to the NTT DATA Business Solutions Turkey Frontend Challenge. It showcases my implementation of the given case requirements and design.
 
 ### Live Demo
-You can access the live demo of the project by clicking on the following link: [Vercel](https://your-vercel-link)
+You can access the live demo of the project by clicking on the following link: [Vercel](https://ntt-data-frontend-case-w9oe.vercel.app/)
 
 ## Project Details
 
