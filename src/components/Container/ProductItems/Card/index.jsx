@@ -3,6 +3,7 @@ import { addFavorite } from "../../../../redux/productsSlice";
 import { useDispatch } from "react-redux";
 import heartIcon from "../../../../assets/gray-heart.svg";
 
+//Product card component
 export default function Card({
   id,
   name,
@@ -31,8 +32,6 @@ export default function Card({
     minimumFractionDigits: 2,
   }).format(price);
 
-  const priceWithoutCurrency = formattedPrice.replace("TRY", "");
-
   return (
     <div className="w-full sm:w-32 md:w-1/2 lg:w-1/4 border-[1px] border-blue-800 rounded relative">
       <button
@@ -55,7 +54,7 @@ export default function Card({
             {name}
           </h5>
           <p className="bg-blue-200" style={{ backgroundColor: "#E6EEF8" }}>
-            {priceWithoutCurrency} ₺
+            {formattedPrice}
           </p>
           <p className="mb-4 text-sm leading-tight line-clamp-2">
             {description}

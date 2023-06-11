@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Title from "./ProductsMenu";
+import ProductsMenu from "./ProductsMenu";
 import Cards from "./ProductItems";
 import MoreButton from "./Button";
 
@@ -8,7 +8,7 @@ export default function Main() {
 
   return (
     <div className="container flex flex-col gap-y-5 mx-auto px-4">
-      <Title setIsFiltered={setIsFiltered} isFiltered={isFiltered} />
+      <ProductsMenu setIsFiltered={setIsFiltered} isFiltered={isFiltered} />
       <Cards isFiltered={isFiltered} />
       <MoreButton />
     </div>
