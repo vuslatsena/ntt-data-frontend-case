@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductsMenu from "./ProductsMenu";
-import Cards from "./ProductItems";
+import ProductCard from "./ProductItems";
 import MoreButton from "./Button";
 
 export default function Main() {
@@ -9,7 +9,7 @@ export default function Main() {
   return (
     <div className="container flex flex-col gap-y-5 mx-auto px-4">
       <ProductsMenu setIsFiltered={setIsFiltered} isFiltered={isFiltered} />
-      <Cards isFiltered={isFiltered} />
+      <ProductCard isFiltered={isFiltered} />
       <MoreButton />
     </div>
   );
