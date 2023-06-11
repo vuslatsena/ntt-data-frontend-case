@@ -63,7 +63,7 @@ export default function More(props) {
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
-        more
+        More
       </Button>
       <StyledMenu
         id="demo-customized-menu"
