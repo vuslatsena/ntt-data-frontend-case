@@ -10,7 +10,6 @@ export default function Main() {
     <div className="container flex flex-col gap-y-5 mx-auto px-4" style={{ paddingBottom: isFiltered ? "12px" : 0 }}>
       <ProductsMenu setIsFiltered={setIsFiltered} isFiltered={isFiltered} />
       <ProductCard isFiltered={isFiltered} />
-      {!isFiltered && <MoreButton />}
     </div>
   );
 }
