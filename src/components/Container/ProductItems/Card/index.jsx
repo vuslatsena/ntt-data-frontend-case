@@ -33,7 +33,7 @@ export default function Card({
   }).format(price);
 
   return (
-    <div className="w-full sm:w-32 md:w-1/2 lg:w-1/4 border-[1px] border-blue-800 rounded relative">
+    <div className="w-full sm:w-32 md:w-1/2 lg:w-1/4 border-[1px] border-from-gray-500 rounded relative">
       <button
         onClick={() => toggleFavorite(id)}
         className={` absolute flex justify-center items-center rounded-full w-8 h-8 right-1 top-1 ${

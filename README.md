@@ -22,18 +22,21 @@ You can access the live demo of the project by clicking on the following link: [
 - **Product Box Click Redirect:** When a product box is clicked, it should redirect the user to a specified address (e.g., google.com).
 - **Product Title Display:** The product title should be displayed within a maximum of two lines. If it exceeds two lines, it should be truncated with ellipsis (...).
 
-## Features
-
-in the footer
-- contact mail
-- phone number
-- logos depicting social media accounts
-- email signup structure
-- the details given about the company 
-
-have a functional.
 ## Technologies to be used
-- 
+- [React](https://reactjs.org/)
+- [React DOM](https://reactjs.org/docs/react-dom.html)
+- [React Redux](https://react-redux.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Material-UI (MUI)](https://mui.com/)
+- [Emotion React](https://emotion.sh/docs/introduction)
+- [Emotion Styled](https://emotion.sh/docs/styled)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Slick Carousel](https://kenwheeler.github.io/slick/)
+- [React Slick](https://github.com/akiran/react-slick)
+- [React Responsive Carousel](https://www.npmjs.com/package/react-responsive-carousel)
+- [React Swipeable Views](https://react-swipeable-views.com/)
+- [Axios](https://axios-http.com/)
 
 ## Install dependencies
-- 
+- npm install
+- npm run start
