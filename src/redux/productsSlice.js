@@ -1,13 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_URL } from "./constants";
 
 export const fetchProducts = createAsyncThunk(
-  "fetchProducts",
+  "products/fetchProducts",
   async () => {
     try {
-      const response = await axios.get(
-        "https://honey-badgers-ecommerce.glitch.me/products"
-      );
+      const response = await axios.get(`${BASE_URL}/products`);
       return response.data;
     } catch (error) {
       if (error.response) {
@@ -24,8 +23,7 @@ export const fetchProducts = createAsyncThunk(
 const initialState = {
   data: [],
   loading: false,
-  pending: false,
-  error: "",
+  error: null,
 };
 
 const productsSlice = createSlice({
@@ -46,11 +44,10 @@ const productsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
-        state.pending = true;
-        state.error = "";
+        state.loading = true;
+        state.error = null;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.pending = false;
         state.loading = false;
         state.data = action.payload.map((product) => ({
           ...product,
@@ -58,9 +55,8 @@ const productsSlice = createSlice({
         }));
       })
       .addCase(fetchProducts.rejected, (state, action) => {
-        state.pending = false;
         state.loading = false;
-        state.error = `Error fetching products: ${action.error.message}`;
+        state.error = action.error.message;
       });
   },
 });
