@@ -34,7 +34,11 @@ export default function ProductCard({ isFiltered }) {
   ));
 
   if (products.length === 0) {
-    return <div>No favorite</div>;
+    return (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "red" }}>
+        No favorite
+      </div>
+    );
   }
 
   const handleDotClick = (index) => {

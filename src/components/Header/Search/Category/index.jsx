@@ -58,18 +58,11 @@ export default function Category() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          Category 1
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          Category 2
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          Category 3
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          Category 4
-        </MenuItem>
+        {["Category 1", "Category 2", "Category 3", "Category 4"].map((category, index) => (
+          <MenuItem key={index} onClick={handleClose} disableRipple>
+            {category}
+          </MenuItem>
+        ))}
       </StyledMenu>
     </div>
   );

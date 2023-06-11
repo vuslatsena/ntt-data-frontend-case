@@ -7,31 +7,22 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function TemporaryDrawer() {
+function TemporaryDrawer() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prevState) => !prevState);
   };
 
-  const list = (
-    <Box
-      sx={{ width: "auto" }}
-      role="presentation"
-      onClick={toggleDrawer}
-      onKeyDown={toggleDrawer}
-    >
-      <List>
-        {["Category 1", "Category 2", "Category 3", "Category 4"].map(
-          (text, index) => (
-            <ListItemButton key={text} disablePadding>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          )
-        )}
-      </List>
-    </Box>
-  );
+  const renderListItems = () => {
+    return ["Category 1", "Category 2", "Category 3", "Category 4"].map(
+      (text, index) => (
+        <ListItemButton key={text} disablePadding>
+          <ListItemText primary={text} />
+        </ListItemButton>
+      )
+    );
+  };
 
   return (
     <Box>
@@ -39,8 +30,17 @@ export default function TemporaryDrawer() {
         <MenuIcon />
       </Button>
       <Drawer anchor="top" open={isDrawerOpen} onClose={toggleDrawer}>
-        {list}
+        <Box
+          sx={{ width: "auto" }}
+          role="presentation"
+          onClick={toggleDrawer}
+          onKeyDown={toggleDrawer}
+        >
+          <List>{renderListItems()}</List>
+        </Box>
       </Drawer>
     </Box>
   );
 }
+
+export default TemporaryDrawer;

@@ -1,6 +1,6 @@
 import React from "react";
 import Category from "./Category";
-import TemporaryDrawer from "./Drawer";
+import TempDrawer from "./Drawer";
 import searchIcon from "../../../assets/search.svg";
 import { styled } from "@mui/system";
 import Button from "@mui/material/Button";
@@ -24,7 +24,7 @@ export default function Search() {
           <img className="h-6 sm:h-8 mb-2" src="./logoImg/ntt-data-blue-logo.svg" alt="NTT Data" />
         </a>
         <div className="flex justify-center items-center sm:hidden w-6 h-6">
-          <TemporaryDrawer />
+          <TempDrawer />
         </div>
       </div>
       <div className="w-full sm:w-5/6 flex justify-between mt-6 sm:mt-0">
