@@ -1,20 +1,34 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const fetchProducts = createAsyncThunk("fetchProducts", async () => {
-  const response = await fetch(
-    "https://honey-badgers-ecommerce.glitch.me/products"
-  );
-  const data = await response.json();
-  return data;
-});
+export const fetchProducts = createAsyncThunk(
+  "fetchProducts",
+  async () => {
+    try {
+      const response = await axios.get(
+        "https://honey-badgers-ecommerce.glitch.me/products"
+      );
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        throw new Error(`Error fetching products: ${error.response.status}`);
+      } else if (error.request) {
+        throw new Error("No response received from the server");
+      } else {
+        throw new Error("Error occurred while making the request");
+      }
+    }
+  }
+);
 
 const initialState = {
   data: [],
-  loading: true,
+  loading: false,
+  pending: false,
   error: "",
 };
 
-export const productsSlice = createSlice({
+const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
@@ -32,19 +46,21 @@ export const productsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
-        state.loading = true;
+        state.pending = true;
         state.error = "";
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.pending = false;
         state.loading = false;
         state.data = action.payload.map((product) => ({
           ...product,
           isFavorited: false,
         }));
       })
-      .addCase(fetchProducts.rejected, (state) => {
+      .addCase(fetchProducts.rejected, (state, action) => {
+        state.pending = false;
         state.loading = false;
-        state.error = "Error fetching products";
+        state.error = `Error fetching products: ${action.error.message}`;
       });
   },
 });
