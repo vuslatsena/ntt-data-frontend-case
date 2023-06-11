@@ -18,29 +18,19 @@ export default function EmailSubscription() {
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     if (!emailRegex.test(email)) {
       setIsValidEmail(false);
-      return;
+    } else {
+      // Perform any other necessary validation before setting isSubscribed to true
+      setIsSubscribed(true);
+      setShowMessage(true); // Show the success message
     }
-
-    // Perform any other necessary validation before setting isSubscribed to true
-    setIsSubscribed(true);
-    setShowMessage(true); // Show the success message
-
-    // Reset the email input after 10 seconds
-    setTimeout(() => {
-      setEmail("");
-    }, 10000);
-
-    // Reset the message after 2 second
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 2000);
   };
 
-  // Effect to hide the message after 10 seconds
+  // Effect to hide the message and clear the email input after 10 seconds
   useEffect(() => {
     if (showMessage) {
       const timer = setTimeout(() => {
         setShowMessage(false);
+        setEmail("");
       }, 10000);
 
       return () => clearTimeout(timer);

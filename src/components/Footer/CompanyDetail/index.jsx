@@ -23,6 +23,7 @@ export default function CompanyDetail() {
 
   return (
     <div className="hidden container sm:flex justify-end gap-x-16 px-6 py-10">
+      {/* About Us */}
       <div className="text-white p-4">
         <h5 className="mb-4 font-bold uppercase">About Us</h5>
         <ul className="flex flex-col list-none gap-y-1">
@@ -44,6 +45,7 @@ export default function CompanyDetail() {
         </ul>
       </div>
 
+      {/* Resources */}
       <div className="text-white p-4 hidden md:block">
         <h5 className="mb-4 font-bold uppercase">Resources</h5>
         <ul className="flex flex-col list-none gap-y-1">
@@ -65,6 +67,7 @@ export default function CompanyDetail() {
         </ul>
       </div>
 
+      {/* Legal */}
       <div className="text-white p-4 hidden md:block">
         <h5 className="mb-4 font-bold uppercase">Legal</h5>
         <ul className="flex flex-col list-none gap-y-1">
@@ -111,6 +114,7 @@ export default function CompanyDetail() {
         </ul>
       </div>
 
+      {/* Cookie Preferences */}
       {showCookiePreferences && (
         <CookiePreferences
           show={showCookiePreferences}
