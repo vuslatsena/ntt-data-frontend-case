@@ -3,42 +3,30 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 
 export default function TemporaryDrawer() {
-  const [state, setState] = useState({
-    top: false,
-  });
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
+  const toggleDrawer = () => {
+    setIsDrawerOpen((prevState) => !prevState);
   };
 
-  const list = (anchor) => (
+  const list = (
     <Box
       sx={{ width: "auto" }}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={toggleDrawer}
+      onKeyDown={toggleDrawer}
     >
       <List>
         {["Category 1", "Category 2", "Category 3", "Category 4"].map(
           (text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
+            <ListItemButton key={text} disablePadding>
+              <ListItemText primary={text} />
+            </ListItemButton>
           )
         )}
       </List>
@@ -47,15 +35,11 @@ export default function TemporaryDrawer() {
 
   return (
     <Box>
-      <Button onClick={toggleDrawer("top", true)}>
+      <Button onClick={toggleDrawer}>
         <MenuIcon />
       </Button>
-      <Drawer
-        anchor="top"
-        open={state["top"]}
-        onClose={toggleDrawer("top", false)}
-      >
-        {list("top")}
+      <Drawer anchor="top" open={isDrawerOpen} onClose={toggleDrawer}>
+        {list}
       </Drawer>
     </Box>
   );

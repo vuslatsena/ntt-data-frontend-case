@@ -1,27 +1,13 @@
-import * as React from "react";
-
+import React, { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const StyledMenu = styled((props) => (
-  <Menu
-    elevation={0}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "right",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "right",
-    }}
-    {...props}
-  />
-))(({ theme }) => ({
+const StyledMenu = styled(Menu)(({ theme }) => ({
   "& .MuiPaper-root": {
-    backgroundColor: "#1d40af", // Blue background color
+    backgroundColor: "#1d40af",
     borderRadius: 6,
     marginTop: theme.spacing(1),
     minWidth: 180,
@@ -40,11 +26,13 @@ const StyledMenu = styled((props) => (
 }));
 
 export default function Category() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -60,15 +48,12 @@ export default function Category() {
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
-        style={{ backgroundColor: "#F4F5F6", color: "black" , textTransform: "none"}}
+        style={{ backgroundColor: "#F4F5F6", color: "black", textTransform: "none" }}
       >
-        { "Categories".charAt(0).toUpperCase() + "Categories".slice(1).toLowerCase() }
+        Categories
       </Button>
       <StyledMenu
         id="demo-customized-menu"
-        MenuListProps={{
-          "aria-labelledby": "demo-customized-button",
-        }}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

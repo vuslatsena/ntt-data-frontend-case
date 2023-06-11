@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import More from "./More";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
@@ -6,9 +6,9 @@ import Button from "@mui/material/Button";
 import { Box, Stack } from "@mui/material";
 
 export default function Menu() {
-  const [anchorElAbout, setAnchorElAbout] = React.useState(null);
-  const [anchorElServices, setAnchorElServices] = React.useState(null);
-  const [anchorElProducts, setAnchorElProducts] = React.useState(null);
+  const [anchorElAbout, setAnchorElAbout] = useState(null);
+  const [anchorElServices, setAnchorElServices] = useState(null);
+  const [anchorElProducts, setAnchorElProducts] = useState(null);
 
   const handleClickAbout = (event) => {
     setAnchorElAbout(event.currentTarget);
@@ -19,7 +19,7 @@ export default function Menu() {
   };
 
   const handleClickProducts = (event) => {
-    setAnchorElProducts(event.currentTarget);
+     setAnchorElAbout(event.currentTarget);
   };
 
   const handleClose = () => {
@@ -145,13 +145,13 @@ export default function Menu() {
             </Box>
           </Popover>
         </div>
-        <div direction="row" spacing={2} justifyContent="center">
+        <div>
           <Button
             aria-describedby={idProducts}
             variant="text"
             size="small"
             onClick={handleClickProducts}
-            className="hidden sm:flex"
+            className="hidden lg:flex"
           >
             Products
           </Button>
@@ -167,20 +167,26 @@ export default function Menu() {
           >
             <Box sx={{ display: "flex", padding: "15px" }}>
               <Stack>
+                <Typography variant="h6" sx={{ p: 2 }}>
+                  Header
+                </Typography>
                 {Array(5)
                   .fill()
                   .map((_, index) => (
                     <Typography key={index} sx={{ p: 2 }}>
-                      Products content
+                      Subeader
                     </Typography>
                   ))}
               </Stack>
               <Stack>
+                <Typography variant="h6" sx={{ p: 2 }}>
+                  Header
+                </Typography>
                 {Array(5)
                   .fill()
                   .map((_, index) => (
                     <Typography key={index} sx={{ p: 2 }}>
-                      Products content
+                      Subheader
                     </Typography>
                   ))}
               </Stack>
