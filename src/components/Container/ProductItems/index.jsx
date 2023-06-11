@@ -138,7 +138,7 @@ export default function ProductCard({ isFiltered }) {
         <Box sx={{ display: { xs: "none", sm: "flex" }, flexDirection: "column", gap: "16px" }}>
           {isLoading ? "Loading..." : swipeableViewContent}
         </Box>
-        {!isLoading && displayedProducts.length > displayLimit && (
+        {isLargeScreen && !isLoading && displayedProducts.length > displayLimit && (
           <MoreButton onClick={handleLoadMore} style={{ marginTop: "16px" }}>
             Load More
           </MoreButton>
