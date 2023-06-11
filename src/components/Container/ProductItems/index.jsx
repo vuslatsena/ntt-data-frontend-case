@@ -56,16 +56,20 @@ export default function ProductCard({ isFiltered }) {
       acc[acc.length - 1].push(product);
       return acc;
     }, [])
-    .map((group, groupIndex) => (
-      <React.Fragment key={groupIndex}>
-        <Box sx={{ display: "flex", gap: "16px" }}>
-          {group.map((product) => (
-            <Card key={product.id} {...product} />
-          ))}
-        </Box>
-        <Box sx={{ height: "16px" }} /> {/* Add spacing between groups */}
-      </React.Fragment>
-    ));
+    .map((group, groupIndex) => {
+      const groupCards = group.map((product) => (
+        <Card key={product.id} {...product} />
+      ));
+
+      return (
+        <React.Fragment key={groupIndex}>
+          <Box sx={{ display: "flex", gap: "16px" }}>
+            {groupCards}
+          </Box>
+          <Box sx={{ height: "16px" }} /> {/* Add spacing between groups */}
+        </React.Fragment>
+      );
+    });
 
   if (displayedProducts.length === 0) {
     return (
